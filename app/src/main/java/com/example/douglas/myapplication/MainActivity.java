@@ -77,22 +77,27 @@ public class MainActivity extends AppCompatActivity {
             Bundle bundleResultadoAluno = data.getExtras();
             String nomeAluno = bundleResultadoAluno.getString(MainActivity.NOME);
             String matriculaAluno = bundleResultadoAluno.getString(MainActivity.EXTRA);
+
             alunos.put(matriculaAluno, nomeAluno);
-            Toast.makeText(getApplicationContext(), "Aluno: " + nomeAluno + ". Matrícula: " + matriculaAluno + ". Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Aluno cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
             txtQtdAluno.setText("Total de alunos: " + alunos.size());
+
         } else if (requestCode == MainActivity.REQUEST_SERVIDOR && resultCode == Activity.RESULT_OK && data != null) {
             Bundle bundleResultadoServidor = data.getExtras();
             String nomeServidor = bundleResultadoServidor.getString(MainActivity.NOME);
             String siapeServidor = bundleResultadoServidor.getString(MainActivity.EXTRA);
+
             servidores.put(siapeServidor, nomeServidor);
-            Toast.makeText(getApplicationContext(), "Servidor: " + nomeServidor + ". Siape: " + siapeServidor + ". Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Servidor cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
             txtQtdServidor.setText("Total de servidores: " + servidores.size());
+
         } else if (requestCode == MainActivity.REQUEST_EXTERNO && resultCode == Activity.RESULT_OK && data != null) {
             Bundle bundleResultadoExterno = data.getExtras();
             String nomeExterno = bundleResultadoExterno.getString(MainActivity.NOME);
-            String emailEsterno = bundleResultadoExterno.getString(MainActivity.EXTRA);
-            externos.put(emailEsterno, nomeExterno);
-            Toast.makeText(getApplicationContext(), "Externo: " + nomeExterno + ". E-mail: " + emailEsterno + ". Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+            String emailExterno = bundleResultadoExterno.getString(MainActivity.EXTRA);
+
+            externos.put(emailExterno, nomeExterno);
+            Toast.makeText(getApplicationContext(), "Externo cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
             txtQtdExterno.setText("Total de externos cadastrados: " + externos.size());
         }
     }
