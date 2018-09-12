@@ -6,4 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".ExternoActivity">
 
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Digite o nome:"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="97dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Digite a matrícula"
+        app:layout_constraintTop_toBottomOf="@+id/edt_externo"
+        tools:layout_editor_absoluteX="78dp" />
+
+    <EditText
+        android:id="@+id/edt_externo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="nome"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        tools:layout_editor_absoluteX="78dp" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="email"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:layout_editor_absoluteX="78dp" />
+
+    <Button
+        android:id="@+id/btn_cadastrar_externo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cadastrar"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email"
+        tools:layout_editor_absoluteX="137dp" />
 </android.support.constraint.ConstraintLayout>

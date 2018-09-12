@@ -20,11 +20,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Digite a matrícula"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nome"
+        app:layout_constraintTop_toBottomOf="@+id/edt_aluno"
         tools:layout_editor_absoluteX="78dp" />
 
     <EditText
-        android:id="@+id/edt_nome"
+        android:id="@+id/edt_aluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -46,7 +46,7 @@
         tools:layout_editor_absoluteX="78dp" />
 
     <Button
-        android:id="@+id/btn_cadastrar"
+        android:id="@+id/btn_cadastrar_aluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
