@@ -27,8 +27,8 @@ public class ServidorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent resultadoServidor = new Intent();
-                resultadoServidor.putExtra(MainActivity.PESSOA_NOME, edtNomeServidor.getText().toString());
-                resultadoServidor.putExtra(MainActivity.PESSOA_EXTRA, edtSiapeServidor.getText().toString());
+                resultadoServidor.putExtra(MainActivity.NOME, edtNomeServidor.getText().toString());
+                resultadoServidor.putExtra(MainActivity.EXTRA, edtSiapeServidor.getText().toString());
                 setResult(Activity.RESULT_OK, resultadoServidor);
                 finish();
             }

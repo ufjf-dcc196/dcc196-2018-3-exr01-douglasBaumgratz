@@ -26,8 +26,8 @@ public class ExternoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent resultadoExterno = new Intent();
-                resultadoExterno.putExtra(MainActivity.PESSOA_NOME, edtExterno.getText().toString());
-                resultadoExterno.putExtra(MainActivity.PESSOA_EXTRA, edtEmail.getText().toString());
+                resultadoExterno.putExtra(MainActivity.NOME, edtExterno.getText().toString());
+                resultadoExterno.putExtra(MainActivity.EXTRA, edtEmail.getText().toString());
                 setResult(Activity.RESULT_OK, resultadoExterno);
                 finish();
             }

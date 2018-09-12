@@ -28,8 +28,8 @@ public class AlunoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent resultadoAluno = new Intent();
-                resultadoAluno.putExtra(MainActivity.PESSOA_NOME, edtAluno.getText().toString());
-                resultadoAluno.putExtra(MainActivity.PESSOA_EXTRA, edtMatricula.getText().toString());
+                resultadoAluno.putExtra(MainActivity.NOME, edtAluno.getText().toString());
+                resultadoAluno.putExtra(MainActivity.EXTRA, edtMatricula.getText().toString());
                 setResult(Activity.RESULT_OK, resultadoAluno);
                 finish();
             }

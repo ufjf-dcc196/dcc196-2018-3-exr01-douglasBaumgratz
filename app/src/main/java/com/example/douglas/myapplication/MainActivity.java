@@ -14,8 +14,8 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String PESSOA_NOME = "nome";
-    public static final String PESSOA_EXTRA = "extra";
+    public static final String NOME = "nome";
+    public static final String EXTRA = "extra";
     public static final int REQUEST_ALUNO = 1;
     public static final int REQUEST_SERVIDOR = 2;
     public static final int REQUEST_EXTERNO = 3;
@@ -67,6 +67,34 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intentExterno, MainActivity.REQUEST_EXTERNO);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == MainActivity.REQUEST_ALUNO && resultCode == Activity.RESULT_OK && data != null) {
+            Bundle bundleResultadoAluno = data.getExtras();
+            String nomeAluno = bundleResultadoAluno.getString(MainActivity.NOME);
+            String matriculaAluno = bundleResultadoAluno.getString(MainActivity.EXTRA);
+            alunos.put(matriculaAluno, nomeAluno);
+            Toast.makeText(getApplicationContext(), "Aluno: " + nomeAluno + ". Matrícula: " + matriculaAluno + ". Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+            txtQtdAluno.setText("Total de alunos: " + alunos.size());
+        } else if (requestCode == MainActivity.REQUEST_SERVIDOR && resultCode == Activity.RESULT_OK && data != null) {
+            Bundle bundleResultadoServidor = data.getExtras();
+            String nomeServidor = bundleResultadoServidor.getString(MainActivity.NOME);
+            String siapeServidor = bundleResultadoServidor.getString(MainActivity.EXTRA);
+            servidores.put(siapeServidor, nomeServidor);
+            Toast.makeText(getApplicationContext(), "Servidor: " + nomeServidor + ". Siape: " + siapeServidor + ". Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+            txtQtdServidor.setText("Total de servidores: " + servidores.size());
+        } else if (requestCode == MainActivity.REQUEST_EXTERNO && resultCode == Activity.RESULT_OK && data != null) {
+            Bundle bundleResultadoExterno = data.getExtras();
+            String nomeExterno = bundleResultadoExterno.getString(MainActivity.NOME);
+            String emailEsterno = bundleResultadoExterno.getString(MainActivity.EXTRA);
+            externos.put(emailEsterno, nomeExterno);
+            Toast.makeText(getApplicationContext(), "Externo: " + nomeExterno + ". E-mail: " + emailEsterno + ". Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+            txtQtdExterno.setText("Total de externos cadastrados: " + externos.size());
+        }
     }
 
 }
